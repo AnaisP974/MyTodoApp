@@ -20,7 +20,23 @@ h1{
     font-family: 'Gruppo', sans-serif;
     font-weight: 600;
 }
+.choices{  
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 5%;
+}
+.btn_back{
+    margin-right: 70px;
+    background-color:rgba(155, 155, 155, 0.5) ;
+    text-decoration: none !important;
+    color:#000 !important;
+}
 
+
+.btn_validation{
+    background-color: #A2BD87;
+}
 /* ********  Début Barre de Navigation  ******** */
 nav{
     background-color: #fff;
@@ -51,6 +67,9 @@ nav a{
     background-color: black;
     color: white;
 }
+
+
+
 /* ********  fin Barre de Navigation   ******** */
 
 

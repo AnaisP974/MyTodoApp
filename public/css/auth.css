@@ -28,18 +28,7 @@ input{
 .form-group{
     text-align: center;
 }
-.choises{  
-    display: flex;
-    justify-content: center;
-    margin: 5%;
-}
-.btn_back_connect{
-    margin-right: 70px;
-    background-color:rgba(155, 155, 155, 0.5) ;
-}
-.btn_connect{
-    background-color: #A2BD87;
-}
+
 .text_small{
     font-size: 1.2rem;
 }

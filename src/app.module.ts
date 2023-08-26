@@ -5,6 +5,7 @@ import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './user/user.entity';
 import { TodosModule } from './todos/todos.module';
+import { Todos } from './todos/todos.entity';
 
 
 @Module({
@@ -16,7 +17,7 @@ import { TodosModule } from './todos/todos.module';
         username: 'root',
         password: '',
         database: 'nest_todoapp',
-        entities: [User],
+        entities: [User, Todos],
         synchronize: true,
     }),
     UserModule,

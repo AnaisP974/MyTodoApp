@@ -1,4 +1,4 @@
-<%- include("../partials/header", {title : "Liste de tâches"}) %>
+<%- include("../partials/header", {title : "Liste de tâches", style : "allTodos"}) %>
 <%- include("../partials/navbar") %>
 
 <% if(locals.connected) { %>
@@ -8,6 +8,9 @@
 <% } %>
     
     <h1 class="title">Liste de tâches</h1>
+    <div class="flex-end">
+        <a href="/todos/add"><button class="button add-todo" title="Ajouter"><i class="bi bi-plus-lg"></i></i></button></a>
+    </div>
    
 <!--     
     <section class="bloc_homePage">

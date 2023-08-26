@@ -1,0 +1,6 @@
+.flex-end{
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    justify-content: end;
+}
