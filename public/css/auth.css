@@ -1,0 +1,46 @@
+/* ********  Début CONNEXION  ******** */
+.text_connect{
+    font-family: 'Indie Flower', cursive;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+}
+label{
+    display: none;
+}
+input{
+    border: none;
+    padding: 1.5rem;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    border-bottom: 1px solid #000;
+
+}
+.bloc_connect{
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 100px;
+}
+.form-group{
+    text-align: center;
+}
+.choises{  
+    display: flex;
+    justify-content: center;
+    margin: 5%;
+}
+.btn_back_connect{
+    margin-right: 70px;
+    background-color:rgba(155, 155, 155, 0.5) ;
+}
+.btn_connect{
+    background-color: #A2BD87;
+}
+.text_small{
+    font-size: 1.2rem;
+}
+/* ********  fin CONNEXION  ******** */

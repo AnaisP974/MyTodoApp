@@ -1,0 +1,21 @@
+<%- include("../partials/header", {title : "Page de connexion", style : "auth"}) %>
+<%- include("../partials/navbar") %>
+
+    <h1 class="title">Connexion</h1>
+
+
+    <section class="bloc_connect">
+        <p class="text_connect">Je me connecte :</p>
+    
+        <form action="" method="post" class="">
+            <%- include("../components/input", {type : "email", name : "email", label : "Email"}) %>
+            <%- include("../components/input", {type : "password", name : "password", label : "Password"}) %>
+            <div class="choises">
+                <button class="button btn_back_connect">Retour</button>
+                <button type="submit" class="button btn_connect">Connexion</button>
+            </div>
+        </form>
+
+        <p class="text_connect text_small">Pas encore client ? <a href="/user/signup">Je cré(e) un compte !</a></p>
+    </section>
+<%- include("../partials/footer") %>

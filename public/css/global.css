@@ -1,0 +1,72 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #DBDBDB;
+}
+h1{
+    font-family: 'Lexend Zetta', sans-serif;
+    font-size: 3rem;
+}
+.title{
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 100px;
+}
+.button{
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    font-family: 'Gruppo', sans-serif;
+    font-weight: 600;
+}
+
+/* ********  Début Barre de Navigation  ******** */
+nav{
+    background-color: #fff;
+}
+.navigation{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo_navbar{
+    width: 20%;
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav ul li{
+    margin-right: 30px;
+    list-style-type: none;
+}
+nav a{
+    text-decoration: none;
+    color: #000;
+}
+.btn_navbar{
+    background-color: black;
+    color: white;
+}
+/* ********  fin Barre de Navigation   ******** */
+
+
+
+/* ********  Début FOOTER  ******** */
+footer{
+    font-family: 'Indie Flower', cursive;
+    background-color:#fff;
+    padding: 1rem;
+    margin-bottom: 50px;
+    margin-top: 100px;
+    text-align: center;
+    font-size: 1.2rem;
+    
+}
+/* ********  fin FOOTER   ******** */
+
+
+

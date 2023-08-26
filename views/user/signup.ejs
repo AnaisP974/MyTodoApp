@@ -1,0 +1,22 @@
+<%- include("../partials/header", {title : "Page d'inscription", style : "auth"}) %>
+<%- include("../partials/navbar") %>
+
+    <h1 class="title">Inscription</h1>
+
+
+    <section class="bloc_connect">
+        <p class="text_connect">Merci de renseigner les champs suivants pour vous inscrire :</p>
+    
+        <form action="" method="post" class="">
+            <%- include("../components/input", {type : "text", name : "username", label : "Pseudo"}) %>
+            <%- include("../components/input", {type : "email", name : "email", label : "Email"}) %>
+            <%- include("../components/input", {type : "password", name : "password", label : "Password"}) %>
+            <div class="choises">
+                <button class="button btn_back_connect">Retour</button>
+                <button type="submit" class="button btn_connect">Inscription</button>
+            </div>
+        </form>
+
+        <p class="text_connect text_small">Déjà client ? <a href="/user/login">Je me connecte à mon compte !</a></p>
+    </section>
+<%- include("../partials/footer") %>

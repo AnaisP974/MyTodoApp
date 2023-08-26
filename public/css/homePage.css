@@ -1,0 +1,55 @@
+/* ********  Début HOME PAGE  ******** */
+
+/* banière */
+.title_homePage{
+    background-color:#fff;
+    padding: 1rem;
+    border-radius: 30px;
+    margin-left: 10%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.parent {
+    position: relative;
+    width: 100vh;
+    height: 80vh;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+.child2 {
+    position: absolute;
+    width: 100%;
+    left: 70%;
+    top: 10%;
+    
+}
+
+/* bloc */
+.bloc_homePage{
+    margin: 10%;
+    display: flex;
+    justify-content: space-around;
+    background-color:#fff;
+    padding: 2rem;
+    border-radius: 30px;
+
+}
+section span{
+    font-family: 'Kite One', sans-serif;
+    font-size: 64px;
+    color: rgba(0, 0, 0, 0.3);
+}
+section p {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.5rem;
+    width: 25%;
+}
+section img{
+    width: 30%;
+}
+/* ********  fin HOME PAGE   ******** */
+
+
