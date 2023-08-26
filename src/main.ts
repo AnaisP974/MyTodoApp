@@ -5,6 +5,7 @@ import { join } from 'path';
 import { ValidationPipe } from '@nestjs/common';
 import * as session from 'express-session';
 import * as mySqlSession from "express-mysql-session";
+import { localData } from "./middlewares/localsData";
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -33,6 +34,7 @@ async function bootstrap() {
     }),
   );
 
+  app.use(localData);
   await app.listen(3000);
 }
 bootstrap();

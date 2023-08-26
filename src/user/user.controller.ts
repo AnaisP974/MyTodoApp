@@ -20,13 +20,21 @@ export class UserController {
     async postSignup(@Body() body: SignupDto) {
         return {message : await this.userService.postSignup(body)}
     }
+
     @UseInterceptors(ClassSerializerInterceptor)
     @Post("/login")
+    @Redirect("/todos/all")
     async postLogin(@Body() body: LoginDto, @Session() session: Record<string,any>) {
         const user = await this.userService.postLogin(body)
         // Rattacher la session à l'utilisateur
         session.user = user
         session.connected = true
         return session
+    }
+
+    @Post("/logout")
+    @Redirect("/")
+    postLogout(@Session() session: Record<string, any>) {
+        session.destroy((err)=> {});
     }
 }
