@@ -11,6 +11,40 @@
     <div class="flex-end">
         <a href="/todos/add"><button class="button add-todo" title="Ajouter"><i class="bi bi-plus-lg"></i></i></button></a>
     </div>
+
+    <table>
+        <thead>
+            <tr>
+               <th scope="col">A faire</th>
+               <th scope="col">En cours</th>
+               <th scope="col">Terminée</th> 
+            </tr>
+        </thead>
+        <tbody>
+           
+            <% if (locals.todos) { %>
+                <% todos.forEach(todo => { %>
+                    <tr class="vide">
+                        <td></td>
+                    </tr>
+                    <tr class="todo">
+                        <td>
+                            <a href="/todos/detail/<%= todo.id %>">
+                            <p class="projectName"><%= todo.projectName %></p>
+                            <p><%= todo.created_at.toISOString().replace(/T/, ' à ').replace(/\..+/, '') %></p>
+                            </a>
+                            <a href=""><i class="bi bi-pencil"></i></a>
+                        </td>
+                    </tr>
+                <% }) %>
+            <% } %>
+        </tbody>
+               
+    </table>
+
+
+
+
    
 <!--     
     <section class="bloc_homePage">

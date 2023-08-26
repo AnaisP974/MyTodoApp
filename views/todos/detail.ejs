@@ -1,0 +1,45 @@
+<%- include("../partials/header", {title : "Détail tâche", style: "detail"}) %>
+<%- include("../partials/navbar") %>
+
+    
+    <h1 class="title">Détail</h1>
+
+    <% if(locals.todos) { %>
+        <section class="bloc_todos"> 
+            <h2 class="center"><%= todos.projectName %></h2>  
+            
+                <div>
+                    <h3>ETAPES :</h3>
+                    <ol>
+                        <li><%= todos.step1 %></li>
+                        <li><%= todos.step2 %></li>
+                        <li><%= todos.step3 %></li>
+                        <li><%= todos.step4 %></li>
+                        <li><%= todos.step5 %></li> 
+                    </ol>  
+                </div>
+                
+                <div>
+                    <h3>A FAIRE :</h3>
+                    <ul>
+                        <li><%= todos.todo1 %></li>
+                        <li><%= todos.todo2 %></li>
+                        <li><%= todos.todo3 %></li>
+                        <li><%= todos.todo4 %></li>
+                        <li><%= todos.todo5 %></li> 
+                     </ul>
+                </div>
+                
+                <div class="choices">
+                    <a href="/todos/all" class="button btn_back" type="button">Retour</a>
+                    <a href="/todos/update" class="button btn_validation" type="button">Modifier</a>
+                </div>
+            
+                <p>Projet de : <%= todos.user.username %></p>
+                <p>Du : <%= todos.created_at.toISOString().replace(/T/, ' à ').replace(/\..+/, '') %></p>
+            </section>          
+       
+       
+    <% } %>
+   
+<%- include("../partials/footer") %>

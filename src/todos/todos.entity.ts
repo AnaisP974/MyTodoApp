@@ -1,5 +1,7 @@
+import { IsDate } from 'class-validator';
 import { User } from 'src/user/user.entity';
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, ManyToOne } from 'typeorm';
+import { isDate } from 'util/types';
 
 @Entity()
 export class Todos {

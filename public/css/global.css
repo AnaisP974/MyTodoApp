@@ -24,7 +24,8 @@ h1{
     display: flex;
     justify-content: center;
     width: 100%;
-    margin: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 .btn_back{
     margin-right: 70px;
@@ -32,11 +33,28 @@ h1{
     text-decoration: none !important;
     color:#000 !important;
 }
-
+a{
+    text-decoration: none;
+    color: #000;
+}
 
 .btn_validation{
     background-color: #A2BD87;
 }
+
+.bloc_todos{
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 30px;
+    max-width: 800px;
+    margin: auto;
+}
+.center{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 /* ********  Début Barre de Navigation  ******** */
 nav{
     background-color: #fff;
