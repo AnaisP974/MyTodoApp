@@ -1,41 +1,31 @@
 /* ********  Début HOME PAGE  ******** */
-
+body{
+    box-sizing: border-box;
+}
 /* banière */
 .title_homePage{
     background-color:#fff;
     padding: 1rem;
-    border-radius: 30px;
+    border-radius: 30px 0;
     margin-left: 10%;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-.parent {
-    position: relative;
-    width: 100vh;
-    height: 80vh;
+    width: 80%;
+    font-size: 2.5rem !important;
     margin-top: 70px;
-    margin-bottom: 70px;
 }
 .child2 {
-    position: absolute;
     width: 100%;
-    left: 70%;
-    top: 10%;
-    
 }
 
 /* bloc */
 .bloc_homePage{
-    margin: 10%;
+    margin: 10px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     background-color:#fff;
     padding: 2rem;
     border-radius: 30px;
-
+    margin-top: 100px;
 }
 section span{
     font-family: 'Kite One', sans-serif;
@@ -45,11 +35,64 @@ section span{
 section p {
     font-family: 'Indie Flower', cursive;
     font-size: 1.5rem;
-    width: 25%;
+    width: 70%;
 }
 section img{
-    width: 30%;
+    min-width: 70px;
+    border: 1px solid gold;
 }
+
+@media screen and (width >= 768px) {
+    /* banière */
+    .title_homePage{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    .parent {
+        position: relative;
+        width: 100vh;
+        height: 80vh;
+        margin-top: 0px;
+        margin-bottom: 70px;
+    }
+    .child2 {
+        position: absolute;
+        width: 80%;
+        left: 25%;
+        top: 20%;
+    }
+    /* bloc */
+    .bloc_homePage{
+        margin: 70px;
+    }
+    section img{
+        max-width: 400px;
+    }
+}
+
+@media screen and (width >= 992px) {
+    /* banière */
+    .parent{
+        margin-left: 15%;
+        padding: none;
+    }
+    .title_homePage{
+        margin-left: 0;
+    }
+    /* bloc */
+    section p {
+        width: 25%;
+    }
+    section img{
+        width: 30%;
+    }
+}
+
+
+
+
 /* ********  fin HOME PAGE   ******** */
 
 
