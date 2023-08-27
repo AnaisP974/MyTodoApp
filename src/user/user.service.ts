@@ -33,6 +33,7 @@ export class UserService {
         const user = await this.usersRepository.findOne({where : {email : email}})
         // si utilisateur inéxistant
         if(!user) throw new NotFoundException("User not found.")
+        console.log(user)
         //vérifier le mot de passe
         const match = await bcrypt.compare(password, user.password)
         if(!match) throw new UnauthorizedException("Invalid Password.")

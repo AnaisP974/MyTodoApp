@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty, IsString, Length } from "class-validator";
+import { IsNotEmpty, IsString, Length } from "class-validator";
 
 export class AddTodosDto {
 
@@ -6,9 +6,8 @@ export class AddTodosDto {
     @IsNotEmpty()
     readonly projectName: string
     
-    @Length(3, 250)
+    @Length(0, 250)
     @IsString()
-    @IsNotEmpty()
     readonly step1: string
     @Length(0, 250)
     @IsString()

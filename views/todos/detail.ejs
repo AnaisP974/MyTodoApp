@@ -32,10 +32,11 @@
                 
                 <div class="choices">
                     <a href="/todos/all" class="button btn_back" type="button">Retour</a>
-                    <a href="/todos/update" class="button btn_validation" type="button">Modifier</a>
+                    <a href="/todos/delete/<%= todos.id %>" class="button btn_delete" type="button">Supprimer</a>
+                    <a href="/todos/update/<%= todos.id %>" class="button btn_validation" type="button">Modifier</a>
                 </div>
             
-                <p>Projet de : <%= todos.user.username %></p>
+                <p>Projet de : <%= user.username %></p>
                 <p>Du : <%= todos.created_at.toISOString().replace(/T/, ' à ').replace(/\..+/, '') %></p>
             </section>          
        

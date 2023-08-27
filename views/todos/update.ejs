@@ -1,0 +1,76 @@
+<%- include("../partials/header", {title : "Modifier une tâche", style : "todosForm"}) %>
+<%- include("../partials/navbar") %>
+
+    
+    <h1 class="title">Modifier</h1>
+
+    <section class="bloc_todos">    
+        <form action="" method="post" class="flex-center">
+            
+            <div class="form-group center">
+                <label for="projectName">Nom du Projet</label>
+                <input type="text" name="projectName" value="<%= todos.projectName %>">
+            </div>
+        
+           
+            <div>
+                <h3>ETAPES :</h3>
+                <ol>
+                    <li class="form-group">
+                        <label for="step1">Etape 1</label>
+                        <input type="text" name="step1" value="<%= todos.step1 %>">
+                    </li>
+                    <li class="form-group">
+                        <label for="step2">Etape 2</label>
+                        <input type="text" name="step2" value="<%= todos.step2 %>">
+                    </li>
+                    <li class="form-group">
+                        <label for="step3">Etape 3</label>
+                        <input type="text" name="step3" value="<%= todos.step3 %>">
+                    </li>
+                    <li class="form-group">
+                        <label for="step4">Etape 4</label>
+                        <input type="text" name="step4" value="<%= todos.step4 %>">
+                    </li>
+                    <li class="form-group">
+                        <label for="step5">Etape 5</label>
+                        <input type="text" name="step5" value="<%= todos.step5 %>">
+                    </li>
+                </ol> 
+            </div>
+            
+            <div>
+                <h3>A FAIRE :</h3>
+                <ul>
+                    <li class="form-group">
+                        <label for="todo1">Etape 1</label>
+                        <input type="text" name="todo1" value="<%= todos.todo1 %>">
+                    </li>
+                    <li class="form-group">
+                        <label for="todo2">Etape 2</label>
+                        <input type="text" name="todo2" value="<%= todos.todo2 %>">
+                    </li>
+                    <li class="form-group">
+                        <label for="todo3">Etape 3</label>
+                        <input type="text" name="todo3" value="<%= todos.todo3 %>">
+                    </li>
+                    <li class="form-group">
+                        <label for="todo4">Etape 4</label>
+                        <input type="text" name="todo4" value="<%= todos.todo4 %>">
+                    </li>
+                    <li class="form-group">
+                        <label for="todo5">Etape 5</label>
+                        <input type="text" name="todo5" value="<%= todos.todo5 %>">
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="choices">
+                <a href="/todos/all" class="button btn_back" type="button">Retour</a>
+                <button type="submit" class="button btn_validation">Modifier</button>
+            </div>
+        </form>
+
+    </section>
+   
+<%- include("../partials/footer") %>

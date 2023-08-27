@@ -13,7 +13,7 @@ export class User {
   @Column({unique: true})
   readonly email: string;
 
-  @Column({select : false})
+  @Column()
   @Exclude()
   readonly password: string;
 
