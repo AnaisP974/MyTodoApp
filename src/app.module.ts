@@ -14,6 +14,7 @@ import { Todos } from './todos/todos.entity';
     TypeOrmModule.forRoot({
       type: 'mysql',
         host: 'containers-us-west-99.railway.app',
+        port: 6409,
         username: 'root',
         password: 'DyhQZI1kydyTBIJgGJ6I',
         database: 'railway',
