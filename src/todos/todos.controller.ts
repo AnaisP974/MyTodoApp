@@ -20,7 +20,7 @@ export class TodosController {
     }
 
     @Get('/add')
-    @Render("todos/addTodos")
+    @Render("todos/AddTodos")
     getAddTodos(){}
 
     @UseInterceptors(ClassSerializerInterceptor)
