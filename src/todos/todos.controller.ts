@@ -16,7 +16,7 @@ export class TodosController {
     async getTodos(@Session() session: Record<string, any>) {
         const currentUser: User = session.user;
         const todos = await this.todosService.getAllTodos(currentUser)
-        return {todos}
+        return {todos};
     }
 
     @Get('/add')
