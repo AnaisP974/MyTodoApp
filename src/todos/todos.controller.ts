@@ -12,7 +12,7 @@ export class TodosController {
     constructor(private readonly todosService : TodosService ) {}
 
     @Get("/all")
-    @Render("/all")
+    @Render("todos/all")
     async getTodos(@Session() session: Record<string, any>) {
         const currentUser: User = session.user;
         const todos = await this.todosService.getAllTodos(currentUser)
@@ -20,7 +20,7 @@ export class TodosController {
     }
 
     @Get('/add')
-    @Render("/addTodos")
+    @Render("todos/addTodos")
     getAddTodos(){}
 
     @UseInterceptors(ClassSerializerInterceptor)
@@ -32,7 +32,7 @@ export class TodosController {
     }
 
     @Get("/detail/:id")
-    @Render("/detail")
+    @Render("todos/detail")
     async getTodo(@Param("id") id: string, @Res() response : Response) {
         try {
             const todos = await this.todosService.getTodo(id)
@@ -50,7 +50,7 @@ export class TodosController {
     }
 
     @Get("/update/:id")
-    @Render("/update")
+    @Render("todos/update")
     async getModifyTodo(@Param("id") id: string, @Res() response : Response) {
         try {
             const todos = await this.todosService.getTodo(id)
