@@ -33,6 +33,20 @@ export class Todos {
   @Column({nullable: true})
   todo5: string;
 
+  @Column({default: false})
+  todo1Done: boolean;
+  @Column({default: false})
+  todo2Done: boolean;
+  @Column({default: false})
+  todo3Done: boolean;
+  @Column({default: false})
+  todo4Done: boolean;
+  @Column({default: false})
+  todo5Done: boolean;
+
+  @Column({default: "open"})
+  status: string;
+
   @CreateDateColumn()
   readonly created_at: Date;
 

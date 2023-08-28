@@ -36,11 +36,18 @@ th:nth-child(3){
     font-weight: 700;
     font-size: 1.3rem;
 }
-
-.todo{
+.todo_open{
     background-color:rgba(255, 255, 255, 0.851);
 }
-td{
+.todo_close{
+    background-color:rgba(195, 193, 193, 0.851);
+}
+.todo_close p{
+    color: #8e8c8c;
+    
+}
+
+td .ajust-cell-form{
     display: flex;
     justify-content: space-around;
     align-items:center;

@@ -4,10 +4,12 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Todos } from './todos.entity';
 import { User } from 'src/user/user.entity';
+import { Console } from 'console';
+import { todoDto } from './dtos/todoDto';
 
 @Injectable()
 export class TodosService {
-
+    
     
     constructor(@InjectRepository(Todos) private readonly todosRepository: Repository<Todos>) {}
     
@@ -28,9 +30,43 @@ export class TodosService {
         if(!todos) throw new NotFoundException("Article inexistant")
         return todos
     }
+    async postDetailTodo(body: todoDto, currentUser: User, id: string) {
+        const todo = await this.todosRepository.findOne({where : {id : +id}, relations : {user : true}})
+        const {todo1Done, todo2Done, todo3Done, todo4Done, todo5Done} = body;
+   
+        if(todo1Done){
+            todo.todo1Done = true
+        } else {
+            todo.todo1Done = false
+        }
+        if(todo2Done){
+            todo.todo2Done = true
+        } else {
+            todo.todo2Done = false
+        }
+        if(todo3Done){
+            todo.todo3Done = true
+        } else {
+            todo.todo3Done = false
+        }
+        if(todo4Done){
+            todo.todo4Done = true
+        } else {
+            todo.todo4Done = false
+        }
+        if(todo5Done){
+            todo.todo5Done = true
+        } else {
+            todo.todo5Done = false
+        }
+        // si inexistant
+        if(!todo) throw new NotFoundException("Article inexistant")
+        // enregistrer le todo modifié
+        todo.user = currentUser
+        await this.todosRepository.save(todo)
+    }
 
     async postUpdateTodos(body: AddTodosDto, currentUser: User, id: string) {
-        
         // Récupérer le todo
         const todo = await this.todosRepository.findOne({where : {id : +id}, relations : {user : true}})
         const newTodo = body;
@@ -68,31 +104,19 @@ export class TodosService {
         if(newTodo.todo5){
             todo.todo5 = newTodo.todo5
         }
-        
-        console.log("body:", body)
-        console.log("todo:", todo)
-        // todo = {... body}
         // si inexistant
         if(!todo) throw new NotFoundException("Article inexistant")
-  
         // enregistrer le todo modifié
         todo.user = currentUser
         await this.todosRepository.save(todo)
-        console.log("Mon User:", currentUser)
-
-        // await this.todosRepository.save(todo.user)
-
-
-        return "Updated todo"
+        
     }
 
     async deleteTodo(currentUser: User, id: string): Promise<boolean> {
         const todo = await this.todosRepository.findOne({ where: { id: +id, user: currentUser } });
-    
         if (!todo) {
             throw new NotFoundException("Todo not found");
         }
-    
         try {
             await this.todosRepository.delete(todo.id);
             return true; // Suppression réussie
@@ -100,5 +124,16 @@ export class TodosService {
             console.error("Error deleting todo:", error);
             return false; // Échec de la suppression
         }
+    }
+
+    async inProgress(currentUser: User, id: string) {
+        const todo = await this.todosRepository.findOne({where : {id : +id}, relations : {user : true}})
+        
+        todo.status = "inProgress"
+        // si inexistant
+        if(!todo) throw new NotFoundException("Article inexistant")
+        // enregistrer le todo modifié
+        todo.user = currentUser
+        await this.todosRepository.save(todo)
     }
 }

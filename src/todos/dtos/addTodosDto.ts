@@ -1,4 +1,5 @@
-import { IsDate, IsNotEmpty, IsString, Length } from "class-validator";
+import { DefaultValuePipe } from "@nestjs/common";
+import { IsBoolean, IsDate, IsNotEmpty, IsString, Length } from "class-validator";
 
 export class AddTodosDto {
 
@@ -37,5 +38,7 @@ export class AddTodosDto {
     @Length(0, 250)
     @IsString()
     readonly todo5: string
+    
+    
 
 }

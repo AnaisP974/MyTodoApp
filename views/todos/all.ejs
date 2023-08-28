@@ -1,17 +1,13 @@
 <%- include("../partials/header", {title : "Liste de tâches", style : "allTodos"}) %>
 <%- include("../partials/navbar") %>
 
-<% if(locals.connected) { %>
-    <p>Bonjour <%= locals.user.username %></p>
-<% } else { %>
-    <p>Bonjour inconnu</p>
-<% } %>
+
     
     <h1 class="title">Liste de tâches</h1>
     <div class="flex-end">
         <a href="/todos/add"><button class="button add-todo" title="Ajouter"><i class="bi bi-plus-lg"></i></i></button></a>
     </div>
-
+    <p><%= locals.message %></p>
     <table>
         <thead>
             <tr>
@@ -21,23 +17,40 @@
             </tr>
         </thead>
         <tbody>
-           
             <% if (locals.todos) { %>
                 <% todos.forEach(todo => { %>
                     <tr class="vide">
                         <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
-                    <tr class="todo">
-                        <td>
-                            <a href="/todos/detail/<%= todo.id %>">
-                            <p class="projectName"><%= todo.projectName %></p>
-                            <p><%= todo.created_at.toISOString().replace(/T/, ' à ').replace(/\..+/, '') %></p>
-                            </a>
-                            <div class="column">
-                                <a href="/todos/update/<%= todo.id %>"><i class="bi bi-pencil"></i></a>
-                                <a href="/todos/delete/<%= todo.id %>"><i class="bi bi-trash"></i></a> 
+                    <tr>
+                        <td class="<% if (todo.status === "open") { %>todo_open<% }else{ %>todo_close<% } %>">
+                            <div class="ajust-cell-form">
+                                <a href="/todos/detail/<%= todo.id %>">
+                                <p class="projectName"><%= todo.projectName %></p>
+                                <p><%= todo.created_at.toISOString().replace(/T/, ' à ').replace(/\..+/, '') %></p>
+                                </a>
+                                <div class="column">
+                                    <a href="/todos/update/<%= todo.id %>"><i class="bi bi-pencil"></i></a>
+                                    <a href="/todos/delete/<%= todo.id %>"><i class="bi bi-trash"></i></a>                             
+                                </div>
                             </div>
                         </td>
+                        <% if (todo.status === "inProgress") { %>
+                        <td class="<% if (todo.status === "inProgress") { %>todo_open<% }else if (todo.status === "completed"){ %>todo_close<% } %>">
+                            <div class="ajust-cell-form">
+                                <a href="/todos/detail/<%= todo.id %>">
+                                <p class="projectName"><%= todo.projectName %></p>
+                                <p><%= todo.created_at.toISOString().replace(/T/, ' à ').replace(/\..+/, '') %></p>
+                                </a>
+                                <div class="column">
+                                    <a href="/todos/update/<%= todo.id %>"><i class="bi bi-pencil"></i></a>
+                                    <a href="/todos/delete/<%= todo.id %>"><i class="bi bi-trash"></i></a>
+                                </div>
+                            </div>
+                        </td>
+                        <% } %>
                     </tr>
                 <% }) %>
             <% } %>

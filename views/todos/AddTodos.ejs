@@ -6,10 +6,10 @@
 
     <section class="bloc_todos">    
         <form action="" method="post" class="flex-center">
-            <div class="center">
+            <div class="center content">
                 <%- include("../components/input", {type : "text", name : "projectName", label : "Nom du Projet"}) %>
             </div>
-            <div>
+            <div class="content">
                 <h3>ETAPES :</h3>
                 <ol>
                     <li><%- include("../components/input", {type : "text", name : "step1", label : "Etape 1"}) %></li>
@@ -20,7 +20,7 @@
                 </ol> 
             </div>
             
-            <div>
+            <div class="content">
                 <h3>A FAIRE :</h3>
                 <ul>
                    <li><%- include("../components/input", {type : "text", name : "todo1", label : "Etape 1"}) %></li>
@@ -31,7 +31,7 @@
                 </ul>
             </div>
             
-            <div class="choices">
+            <div class="choices content">
                 <a href="/todos/all" class="button btn_back" type="button">Retour</a>
                 <button type="submit" class="button btn_validation">Ajouter</button>
             </div>

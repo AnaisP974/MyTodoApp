@@ -1,13 +1,34 @@
 h3{
     font-family: 'Lexend Zetta', sans-serif;
 }
-div{
+.content{
     margin: auto;
     width: 80%;
 }
-li{
+li, label{
     font-family: 'Indie Flower', cursive;
     font-size: 1.3rem;
     padding: 10px;
 
+}
+span{
+    color: rgb(136, 136, 136);
+}
+h4{
+    font-family: 'Indie Flower', cursive;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+p{
+    font-family: 'Indie Flower', cursive;
+    max-width: 800px;
+    margin: auto;
+}
+form{
+    font-family: 'Indie Flower', cursive;
+    margin-bottom: 100px;
+}
+legend{
+    font-family: 'Lexend Zetta', sans-serif;
 }

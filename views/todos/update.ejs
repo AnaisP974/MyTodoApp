@@ -6,14 +6,11 @@
 
     <section class="bloc_todos">    
         <form action="" method="post" class="flex-center">
-            
-            <div class="form-group center">
+            <div class="form-group center content">
                 <label for="projectName">Nom du Projet</label>
                 <input type="text" name="projectName" value="<%= todos.projectName %>">
             </div>
-        
-           
-            <div>
+            <div class="content">
                 <h3>ETAPES :</h3>
                 <ol>
                     <li class="form-group">
@@ -39,7 +36,7 @@
                 </ol> 
             </div>
             
-            <div>
+            <div class="content">
                 <h3>A FAIRE :</h3>
                 <ul>
                     <li class="form-group">
@@ -66,7 +63,7 @@
                 </ul>
             </div>
             
-            <div class="choices">
+            <div class="choices content">
                 <a href="/todos/all" class="button btn_back" type="button">Retour</a>
                 <button type="submit" class="button btn_validation">Modifier</button>
             </div>

@@ -3,6 +3,7 @@ import { AddTodosDto } from './dtos/addTodosDto';
 import { TodosService } from './todos.service';
 import { User } from 'src/user/user.entity';
 import { Response, response } from 'express';
+import { todoDto } from './dtos/todoDto';
 
 
 @Controller('todos')
@@ -39,6 +40,14 @@ export class TodosController {
            response.status(404).render("errors/404", {message : error.message})
         }
     }
+    @Post("/detail/:id")
+    @Redirect("/todos/all")
+    async postDetailTodo(@Body() body: todoDto, @Session() session: Record<string, any>, @Param("id") id: string){
+        console.log(body)
+        const currentUser: User = session.user;
+        return await this.todosService.postDetailTodo(body, currentUser, id)
+    }
+
     @Get("/update/:id")
     @Render("todos/update")
     async getModifyTodo(@Param("id") id: string, @Res() response : Response) {
@@ -53,7 +62,7 @@ export class TodosController {
     // @UseInterceptors(ClassSerializerInterceptor)
     @Post("/update/:id")
     @Redirect("/todos/all")
-    async postUpdateTodos(@Body() body: AddTodosDto, @Session() session: Record<string, any>, @Param("id") id: string,) {
+    async postUpdateTodos(@Body() body: AddTodosDto, @Session() session: Record<string, any>, @Param("id") id: string) {
         const currentUser: User = session.user;
         return await this.todosService.postUpdateTodos(body, currentUser, id)
     }
@@ -72,5 +81,10 @@ export class TodosController {
             throw new InternalServerErrorException("Failed to delete todo");
         }
     }
-
+    @Get("/inProgress/:id")
+    @Redirect("/todos/all")
+    async inProgress(@Session() session: Record<string, any>, @Param("id") id: string){
+        const currentUser: User = session.user;
+        return await this.todosService.inProgress(currentUser, id)
+    }
 }

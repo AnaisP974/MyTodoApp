@@ -18,7 +18,7 @@ form{
     justify-content: center;
 }
 
-div{
+.content{
     margin: auto;
     width: 80%;
 }
