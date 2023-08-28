@@ -1,5 +1,4 @@
-import { DefaultValuePipe } from "@nestjs/common";
-import { IsBoolean, IsDate, IsNotEmpty, IsString, Length } from "class-validator";
+import { IsNotEmpty, IsString, Length } from "class-validator";
 
 export class TodoListDto {
 

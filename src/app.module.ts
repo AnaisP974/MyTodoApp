@@ -13,11 +13,11 @@ import { Todos } from './todos/todos.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-        host: 'localhost',
-        port: 3306,
+        host: 'containers-us-west-99.railway.app',
+        port: 6409,
         username: 'root',
-        password: '',
-        database: 'nest_todoapp',
+        password: 'DyhQZI1kydyTBIJgGJ6I',
+        database: 'railway',
         entities: [User, Todos],
         synchronize: true,
     }),
