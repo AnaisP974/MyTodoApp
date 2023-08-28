@@ -8,6 +8,7 @@ input{
     border-bottom: 1px solid #000;
     font-size: 1.3rem;
     margin-bottom: 20px;
+    width: 90%;
 }
 ul li{
     list-style-type: circle;
