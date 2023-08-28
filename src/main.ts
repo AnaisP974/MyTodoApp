@@ -7,6 +7,7 @@ import * as session from 'express-session';
 import * as mySqlSession from "express-mysql-session";
 import { localData } from "./middlewares/localsData";
 
+
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useGlobalPipes(new ValidationPipe())
@@ -16,11 +17,11 @@ async function bootstrap() {
 
   //pour enregistrement des données de session en bdd
   const options = {
-    host: 'localhost',
-    port: 3306,
+    host: 'containers-us-west-99.railway.app',
+    port: 6409,
     user: 'root',
-    password: '',
-    database: 'nest_todoapp'
+    password: 'DyhQZI1kydyTBIJgGJ6I',
+    database: 'railway'
   };
   const MySqlStore = mySqlSession(session)
   const store = new MySqlStore(options)
@@ -35,6 +36,6 @@ async function bootstrap() {
   );
 
   app.use(localData);
-  await app.listen(3000);
+  await app.listen(80);
 }
 bootstrap();

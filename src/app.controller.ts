@@ -8,4 +8,8 @@ export class AppController {
   @Get()
   @Render("index")
   getHello() {}
+
+  @Get("/en")
+  @Render("en_index")
+  getHi() {}
 }
