@@ -27,3 +27,8 @@ form{
 h3{
     font-family: 'Lexend Zetta', sans-serif;
 }
+p{
+    font-family: 'Indie Flower', cursive;
+    max-width: 800px;
+    margin: auto;
+}

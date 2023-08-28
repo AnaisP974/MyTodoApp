@@ -4,12 +4,11 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Todos } from './todos.entity';
 import { User } from 'src/user/user.entity';
-import { Console } from 'console';
 import { todoDto } from './dtos/todoDto';
+import { TodoListDto } from './dtos/todoListDto';
 
 @Injectable()
 export class TodosService {
-    
     
     constructor(@InjectRepository(Todos) private readonly todosRepository: Repository<Todos>) {}
     
@@ -66,7 +65,7 @@ export class TodosService {
         await this.todosRepository.save(todo)
     }
 
-    async postUpdateTodos(body: AddTodosDto, currentUser: User, id: string) {
+    async postUpdateTodos(body: TodoListDto, currentUser: User, id: string) {
         // Récupérer le todo
         const todo = await this.todosRepository.findOne({where : {id : +id}, relations : {user : true}})
         const newTodo = body;
@@ -136,4 +135,16 @@ export class TodosService {
         todo.user = currentUser
         await this.todosRepository.save(todo)
     }
+
+    async complete(currentUser: User, id: string) {
+        const todo = await this.todosRepository.findOne({where : {id : +id}, relations : {user : true}})
+        
+        todo.status = "complete"
+        // si inexistant
+        if(!todo) throw new NotFoundException("Article inexistant")
+        // enregistrer le todo modifié
+        todo.user = currentUser
+        await this.todosRepository.save(todo)
+    }
+    
 }

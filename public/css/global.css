@@ -20,15 +20,37 @@ h1{
     font-family: 'Gruppo', sans-serif;
     font-weight: 600;
 }
+.btn_update{
+    border-radius: 30px;
+    border: 3px solid rgb(169, 169, 214);
+}
+.btn_update:hover{
+    background-color: rgb(169, 169, 214);
+}
+.btn_complete{
+    border-radius: 30px;
+    border: 3px solid gold;
+}
+.btn_complete:hover{
+    background-color: gold;
+}
+.hidden{
+    display: none;
+}
 .choices{  
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     width: 100%;
     margin-top: 5%;
     margin-bottom: 5%;
 }
 .btn_back{
-    margin-right: 70px;
+    border-radius: 30px;
+    border: 3px solid rgba(155, 155, 155, 0.5) ;
+    text-decoration: none !important;
+    color:#000 !important;
+}
+.btn_back:hover{
     background-color:rgba(155, 155, 155, 0.5) ;
     text-decoration: none !important;
     color:#000 !important;
@@ -39,9 +61,19 @@ a{
 }
 
 .btn_validation{
+    border-radius: 30px;
+    border: 3px solid #A2BD87;
+    background-color:#fff
+}
+.btn_validation:hover{
     background-color: #A2BD87;
 }
+
 .btn_delete{
+    border-radius: 30px;
+    border: 3px solid #bd8a87;
+}
+.btn_delete:hover{
     background-color: #bd8a87;
 }
 

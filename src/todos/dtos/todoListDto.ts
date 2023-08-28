@@ -1,7 +1,7 @@
 import { DefaultValuePipe } from "@nestjs/common";
 import { IsBoolean, IsDate, IsNotEmpty, IsString, Length } from "class-validator";
 
-export class AddTodosDto {
+export class TodoListDto {
 
     @Length(3, 100)
     @IsNotEmpty()
@@ -23,21 +23,21 @@ export class AddTodosDto {
     @IsString()
     readonly step5: string
 
-    // @Length(0, 250)
-    // @IsString()
-    // readonly todo1: string
-    // @Length(0, 250)
-    // @IsString()
-    // readonly todo2: string
-    // @Length(0, 250)
-    // @IsString()
-    // readonly todo3: string
-    // @Length(0, 250)
-    // @IsString()
-    // readonly todo4: string
-    // @Length(0, 250)
-    // @IsString()
-    // readonly todo5: string
+    @Length(0, 250)
+    @IsString()
+    readonly todo1: string
+    @Length(0, 250)
+    @IsString()
+    readonly todo2: string
+    @Length(0, 250)
+    @IsString()
+    readonly todo3: string
+    @Length(0, 250)
+    @IsString()
+    readonly todo4: string
+    @Length(0, 250)
+    @IsString()
+    readonly todo5: string
     
     
 

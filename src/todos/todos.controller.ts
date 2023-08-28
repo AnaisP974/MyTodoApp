@@ -4,6 +4,7 @@ import { TodosService } from './todos.service';
 import { User } from 'src/user/user.entity';
 import { Response, response } from 'express';
 import { todoDto } from './dtos/todoDto';
+import { TodoListDto } from './dtos/todoListDto';
 
 
 @Controller('todos')
@@ -62,7 +63,7 @@ export class TodosController {
     // @UseInterceptors(ClassSerializerInterceptor)
     @Post("/update/:id")
     @Redirect("/todos/all")
-    async postUpdateTodos(@Body() body: AddTodosDto, @Session() session: Record<string, any>, @Param("id") id: string) {
+    async postUpdateTodos(@Body() body: TodoListDto, @Session() session: Record<string, any>, @Param("id") id: string) {
         const currentUser: User = session.user;
         return await this.todosService.postUpdateTodos(body, currentUser, id)
     }
@@ -86,5 +87,11 @@ export class TodosController {
     async inProgress(@Session() session: Record<string, any>, @Param("id") id: string){
         const currentUser: User = session.user;
         return await this.todosService.inProgress(currentUser, id)
+    }
+    @Get("/complete/:id")
+    @Redirect("/todos/all")
+    async complete(@Session() session: Record<string, any>, @Param("id") id: string){
+        const currentUser: User = session.user;
+        return await this.todosService.complete(currentUser, id)
     }
 }

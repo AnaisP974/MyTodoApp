@@ -39,6 +39,10 @@ th:nth-child(3){
 .todo_open{
     background-color:rgba(255, 255, 255, 0.851);
 }
+.todo_complete{
+    background-color:rgba(226, 208, 159, 0.851);
+    border: gold;
+}
 .todo_close{
     background-color:rgba(195, 193, 193, 0.851);
 }
