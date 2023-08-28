@@ -19,7 +19,7 @@ import { Todos } from './todos/todos.entity';
         password: 'DyhQZI1kydyTBIJgGJ6I',
         database: 'railway',
         entities: [User, Todos],
-        synchronize: true,
+        synchronize: false,
     }),
     UserModule,
     TodosModule
