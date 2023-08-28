@@ -9,35 +9,35 @@ export class Todos {
   readonly id: number;
 
   @Column()
-  readonly projectName: string;
+  projectName: string;
 
   @Column()
-  readonly step1: string;
+  step1: string;
   @Column({nullable: true})
-  readonly step2: string;
+  step2: string;
   @Column({nullable: true})
-  readonly step3: string;
+  step3: string;
   @Column({nullable: true})
-  readonly step4: string;
+  step4: string;
   @Column({nullable: true})
-  readonly step5: string;
+  step5: string;
 
   @Column({nullable: true})
-  readonly todo1: string;
+  todo1: string;
   @Column({nullable: true})
-  readonly todo2: string;
+  todo2: string;
   @Column({nullable: true})
-  readonly todo3: string;
+  todo3: string;
   @Column({nullable: true})
-  readonly todo4: string;
+  todo4: string;
   @Column({nullable: true})
-  readonly todo5: string;
+  todo5: string;
 
   @CreateDateColumn()
   readonly created_at: Date;
 
   @UpdateDateColumn()
-  readonly updated_at: Date;
+  updated_at: Date;
 
   @ManyToOne(() => User, (user) => user.todos)
   user: User

@@ -30,24 +30,62 @@ export class TodosService {
     }
 
     async postUpdateTodos(body: AddTodosDto, currentUser: User, id: string) {
+        
         // Récupérer le todo
-        let todo = await this.todosRepository.findOne({where : {id : +id}, relations : {user : true}})
+        const todo = await this.todosRepository.findOne({where : {id : +id}, relations : {user : true}})
+        const newTodo = body;
+
+        if(newTodo.projectName){
+            todo.projectName = newTodo.projectName
+        }
+        if(newTodo.step1){
+            todo.step1 = newTodo.step1
+        }
+        if(newTodo.step2){
+            todo.step2 = newTodo.step2
+        }
+        if(newTodo.step3){
+            todo.step3 = newTodo.step3
+        }
+        if(newTodo.step4){
+            todo.step4 = newTodo.step4
+        }
+        if(newTodo.step5){
+            todo.step5 = newTodo.step5
+        }
+        if(newTodo.todo1){
+            todo.todo1 = newTodo.todo1
+        }
+        if(newTodo.todo2){
+            todo.todo2 = newTodo.todo2
+        }
+        if(newTodo.todo3){
+            todo.todo3 = newTodo.todo3
+        }
+        if(newTodo.todo4){
+            todo.todo4 = newTodo.todo4
+        }
+        if(newTodo.todo5){
+            todo.todo5 = newTodo.todo5
+        }
+        
+        console.log("body:", body)
+        console.log("todo:", todo)
+        // todo = {... body}
         // si inexistant
         if(!todo) throw new NotFoundException("Article inexistant")
+  
         // enregistrer le todo modifié
-        todo = await this.todosRepository.save(body)
+        todo.user = currentUser
+        await this.todosRepository.save(todo)
+        console.log("Mon User:", currentUser)
+
+        // await this.todosRepository.save(todo.user)
+
+
         return "Updated todo"
     }
 
-    // async deleteTodo(currentUser: User, id: string) {
-    //     // Récupérer le todo
-    //     let todo = await this.todosRepository.findOne({where : {id : +id}, relations : {user : true}})
-    //     // si inexistant
-    //     if(!todo) throw new NotFoundException("Article inexistant")
-    //     // supprimer le todo sélectionné
-    //     await this.todosRepository.delete(id)
-    //     return "Deleted todo"
-    // }
     async deleteTodo(currentUser: User, id: string): Promise<boolean> {
         const todo = await this.todosRepository.findOne({ where: { id: +id, user: currentUser } });
     

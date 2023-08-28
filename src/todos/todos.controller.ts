@@ -1,4 +1,4 @@
-import { Body, ClassSerializerInterceptor, Controller, Delete, Get, InternalServerErrorException, Param, Post, Redirect, Render, Res, Session, UseInterceptors } from '@nestjs/common';
+import { Body, ClassSerializerInterceptor, Controller, Delete, Get, InternalServerErrorException, Param, Patch, Post, Redirect, Render, Res, Session, UseInterceptors } from '@nestjs/common';
 import { AddTodosDto } from './dtos/addTodosDto';
 import { TodosService } from './todos.service';
 import { User } from 'src/user/user.entity';
@@ -49,18 +49,15 @@ export class TodosController {
            response.status(404).render("errors/404", {message : error.message})
         }
     }
+
+    // @UseInterceptors(ClassSerializerInterceptor)
     @Post("/update/:id")
     @Redirect("/todos/all")
     async postUpdateTodos(@Body() body: AddTodosDto, @Session() session: Record<string, any>, @Param("id") id: string,) {
         const currentUser: User = session.user;
         return await this.todosService.postUpdateTodos(body, currentUser, id)
     }
-    // @Delete("/delete/:id")
-    // @Redirect("/todos/all")
-    // async deleteTodo(@Param("id") id: string, @Session() session: Record<string, any>){
-    //     const currentUser: User = session.user;
-    //     return await this.todosService.deleteTodo(currentUser, id)
-    // }
+ 
     @Get("/delete/:id")
     @Delete("/delete/:id")
     @Redirect("/todos/all")
