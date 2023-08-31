@@ -2,10 +2,7 @@
 body{
     box-sizing: border-box;
 }
-main{
-    margin-left: 50px;
-    margin-right: 50px;
-}
+
 /* bannner */
 .title_homePage{
     background-color:#fff;
@@ -21,6 +18,10 @@ main{
 }
 
 /* block */
+.content{
+    margin-left: 50px;
+    margin-right: 50px;
+}
 .bloc_homePage{
     margin: 10px;
     display: flex;
