@@ -125,7 +125,9 @@ a{
     .button{
         padding: 11px;
     }
-    
+    .choices{
+        width: 50%;
+    }
 }
 
 @media screen and (width >= 992px) {

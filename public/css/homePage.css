@@ -66,7 +66,7 @@ section img{
     }
     .child2 {
         position: absolute;
-        width: 80%;
+        width: 75%;
         left: 25%;
         top: 20%;
     }
@@ -88,6 +88,9 @@ section img{
     .parent{
         margin-left: 15%;
         padding: none;
+    }
+    .child2{
+        width: 85%;
     }
     .title_homePage{
         margin-left: 0;
