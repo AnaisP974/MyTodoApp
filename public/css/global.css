@@ -1,3 +1,4 @@
+/* GLOBAL CSS */
 body{
     font-family: sans-serif;
     margin: 0;
@@ -6,77 +7,20 @@ body{
 }
 h1{
     font-family: 'Lexend Zetta', sans-serif;
-    font-size: 2rem;
+    font-size: 1.3rem;
 }
 .title{
     text-align: center;
     margin-top: 70px;
     margin-bottom: 100px;
 }
-.button{
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    font-family: 'Gruppo', sans-serif;
-    font-weight: 600;
-}
-.btn_update{
-    border-radius: 30px;
-    border: 3px solid rgb(169, 169, 214);
-}
-.btn_update:hover{
-    background-color: rgb(169, 169, 214);
-}
-.btn_complete{
-    border-radius: 30px;
-    border: 3px solid gold;
-}
-.btn_complete:hover{
-    background-color: gold;
-}
 .hidden{
     display: none;
-}
-.choices{  
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
-.btn_back{
-    border-radius: 30px;
-    border: 3px solid rgba(155, 155, 155, 0.5) ;
-    text-decoration: none !important;
-    color:#000 !important;
-}
-.btn_back:hover{
-    background-color:rgba(155, 155, 155, 0.5) ;
-    text-decoration: none !important;
-    color:#000 !important;
 }
 a{
     text-decoration: none;
     color: #000;
 }
-
-.btn_validation{
-    border-radius: 30px;
-    border: 3px solid #A2BD87;
-    background-color:#fff
-}
-.btn_validation:hover{
-    background-color: #A2BD87;
-}
-
-.btn_delete{
-    border-radius: 30px;
-    border: 3px solid #bd8a87;
-}
-.btn_delete:hover{
-    background-color: #bd8a87;
-}
-
 .bloc_todos{
     background-color: #fff;
     padding: 1rem;
@@ -102,10 +46,98 @@ a{
 }
 .russo{
     font-family: 'Russo One', sans-serif;
-    font-size: 1.2rem;
     color: #4e6f2c;
 }
-/* ********  Début Barre de Navigation  ******** */
+
+/* start BUTTONS */
+.button{
+    padding: 6px 10px;
+    border: none;
+    font-family: 'Gruppo', sans-serif;
+    font-weight: 600;
+}
+.btn_update{
+    border-radius: 30px;
+    border: 3px solid rgb(169, 169, 214);
+}
+.btn_update:hover{
+    background-color: rgb(169, 169, 214);
+}
+.btn_complete{
+    border-radius: 30px;
+    border: 3px solid gold;
+}
+.btn_complete:hover{
+    background-color: gold;
+}
+.choices{  
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 0 10px;  
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn_back{
+    border-radius: 30px;
+    border: 3px solid rgba(155, 155, 155, 0.5) ;
+    text-decoration: none !important;
+    color:#000 !important;
+}
+.btn_back:hover{
+    background-color:rgba(155, 155, 155, 0.5) ;
+    text-decoration: none !important;
+    color:#000 !important;
+}
+.btn_validation{
+    border-radius: 30px;
+    border: 3px solid #A2BD87;
+    background-color:#fff
+}
+.btn_validation:hover{
+    background-color: #A2BD87;
+}
+.btn_delete{
+    border-radius: 30px;
+    border: 3px solid #bd8a87;
+}
+.btn_delete:hover{
+    background-color: #bd8a87;
+}
+/* end BUTTONS */
+
+
+
+/* Sizes */
+.russo, .button{
+    font-size: 0.9rem;
+}
+
+@media screen and (width >= 768px) {
+    .russo, .button{
+    font-size: 1rem;
+    }
+    h1{
+        font-size: 2rem;
+    }
+    .button{
+        padding: 11px;
+    }
+    
+}
+
+@media screen and (width >= 992px) {
+    .russo{
+    font-size: 1.2rem;
+    }
+    .button{
+        padding: 16px;
+    }
+}
+
+/* ********  start NAVIGATION BAR  ******** */
 nav{
     background-color: #fff;
 }
@@ -116,7 +148,7 @@ nav{
     justify-content: space-between;
 }
 .logo_navbar{
-    width: 200px;
+    width: 120px;
 }
 nav ul{
     display: flex;
@@ -124,7 +156,6 @@ nav ul{
     align-items: center;
 }
 nav ul li{
-    margin-right: 30px;
     list-style-type: none;
 }
 nav a{
@@ -135,23 +166,46 @@ nav a{
     background-color: black;
     color: white;
 }
+@media screen and (width >= 768px) {
+    .logo_navbar{
+        width: 160px;
+    } 
+    nav ul li {
+        margin-right: 20px;
+    }
+}
 
-/* ********  fin Barre de Navigation   ******** */
+@media screen and (width >= 992px) {
+    .logo_navbar{
+        width: 200px;
+    }
+    nav ul li {
+        margin-right: 30px;
+    }
+}
+/* ********  end NAVIGATION BAR   ******** */
 
 
 
-/* ********  Début FOOTER  ******** */
+/* ********  start FOOTER  ******** */
 footer{
     font-family: 'Indie Flower', cursive;
     background-color:#fff;
-    padding: 1rem;
+    padding: 30px 50px;
     margin-bottom: 50px;
     margin-top: 100px;
     text-align: center;
-    font-size: 1.2rem;
-    
+    font-size: 0.8rem;  
 }
-/* ********  fin FOOTER   ******** */
+@media screen and (width >= 768px) {
+    footer{
+        font-size: 1rem; 
+    }
+}
 
-
-
+@media screen and (width >= 992px) {
+    footer{
+    font-size: 1.2rem;  
+    }
+}
+/* ********  end FOOTER   ******** */

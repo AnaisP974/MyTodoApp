@@ -1,8 +1,12 @@
-/* ********  Début HOME PAGE  ******** */
+/* ********  start HOME PAGE  ******** */
 body{
     box-sizing: border-box;
 }
-/* banière */
+main{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+/* bannner */
 .title_homePage{
     background-color:#fff;
     padding: 1rem;
@@ -16,42 +20,41 @@ body{
     width: 100%;
 }
 
-/* bloc */
+/* block */
 .bloc_homePage{
     margin: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     background-color:#fff;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 30px;
     margin-top: 100px;
     max-width: 800px;
 }
-
-
 section span{
     font-family: 'Kite One', sans-serif;
-    font-size: 64px;
+    font-size: 2rem;
     color: rgba(0, 0, 0, 0.3);
 }
 section p {
     font-family: 'Indie Flower', cursive;
-    font-size: 1.5rem;
+    font-size: 0.9rem;
     width: 70%;
 }
 section img{
     min-width: 70px;
-    border: 1px solid gold;
+    border: 2px solid gold;
 }
 
 @media screen and (width >= 768px) {
-    /* banière */
+    /* banner */
     .title_homePage{
         position: absolute;
         top: 0;
         left: 0;
         z-index: 1;
+        font-size: 2rem !important;
     }
     .parent {
         position: relative;
@@ -66,10 +69,13 @@ section img{
         left: 25%;
         top: 20%;
     }
-    /* bloc */
+    /* block */
     .bloc_homePage{
         margin: auto;
         margin-top: 70px;
+    }
+    section p {
+        font-size: 1.5rem;
     }
     section img{
         max-width: 400px;
@@ -77,16 +83,15 @@ section img{
 }
 
 @media screen and (width >= 992px) {
-    /* banière */
+    /* banner */
     .parent{
         margin-left: 15%;
         padding: none;
     }
     .title_homePage{
         margin-left: 0;
-        font-size: 2rem;
     }
-    /* bloc */
+    /* block */
     section p {
         width: 25%;
     }
@@ -95,9 +100,4 @@ section img{
     }
 }
 
-
-
-
-/* ********  fin HOME PAGE   ******** */
-
-
+/* ********  end HOME PAGE   ******** */

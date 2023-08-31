@@ -1,6 +1,6 @@
 <nav class="navigation">
     <div class="flex">
-        <a href="<% if(!locals.connected) { %>/<% } else { %>/todos/all<% } %>"><img src="/images/logo-todoApp.png" alt="Logo du site" class="logo_navbar"></a>
+        <a href="<% if(!locals.connected) { %>/<% } else { %>/todos/all<% } %>"><img src="/images/logo-todoApp.png" alt="Logo du site de gestion de tâche en ligne(TodoList Online)" class="logo_navbar"></a>
         <% if(locals.connected) { %>
             <p class="russo">Bonjour <%= locals.user.username %>,</p>
         <% } else { %>
@@ -10,8 +10,8 @@
     
     <ul>
         <% if(!locals.connected) { %>
-        <li><a href="/user/signup">Inscription</a></li>
-        <li><a href="/user/login">Connexion</a></li>
+        <li><a href="/user/signup" type="button" class="button">Inscription</a></li>
+        <li><a href="/user/login" type="button" class="button">Connexion</a></li>
         <% } else { %>
         <!-- <li><a href="/todos/all">Mes tâches</a></li> -->
         

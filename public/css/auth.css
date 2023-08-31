@@ -1,17 +1,17 @@
-/* ********  Début CONNEXION  ******** */
+/* ********  start CONNEXION  ******** */
 .text_connect{
     font-family: 'Indie Flower', cursive;
     width: 100%;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 0.9rem;
 }
 label{
     display: none;
 }
 input{
     border: none;
-    padding: 1.1rem;
-    font-size: 24px;
+    padding: 0.7rem;
+    font-size: 0.9rem;
     text-align: center;
     margin-top: 20px;
     border-bottom: 1px solid #000;
@@ -30,6 +30,35 @@ input{
 }
 
 .text_small{
-    font-size: 1.2rem;
+    font-size: 0.8rem;
 }
-/* ********  fin CONNEXION  ******** */
+span{
+    text-decoration: underline;
+    color:blue;
+}
+
+@media screen and (width >= 768px) {
+    input{
+        padding: 0.9rem;
+    }
+    .text_connect, input{
+        font-size: 1rem;
+    }
+    .text_small{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (width >= 992px) {
+    input{
+        padding: 1.1rem;
+    }
+    .text_connect, input{
+        font-size: 1.5rem;
+    }
+    .text_small{
+        font-size: 1.2rem;
+    }
+}
+/* ********  end CONNEXION  ******** */
+
