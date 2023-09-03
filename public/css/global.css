@@ -72,8 +72,8 @@ a{
 }
 .choices{  
     display: flex;
-    justify-content: space-around;
-    width: 80%;
+    justify-content: space-between;
+    width: 100%;
     margin-top: 30px;
     margin-bottom: 50px;
     padding: 0 10px;  
@@ -124,11 +124,6 @@ a{
     }
     .button{
         padding: 11px;
-    }
-    .choices{
-        width: 50%;
-        margin-top: 5%;
-        margin-bottom: 5%;
     }
 }
 

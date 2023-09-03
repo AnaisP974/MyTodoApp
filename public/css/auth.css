@@ -25,10 +25,14 @@ input{
     margin-right: 10%;
     margin-bottom: 100px;
 }
+.column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .imgAuth{
     width: 90%;
     max-width: 400px;
-    margin-left: 20%;
 }
 .form-group{
     text-align: center;

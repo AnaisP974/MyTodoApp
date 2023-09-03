@@ -3,17 +3,19 @@
 <main>
     <h1 class="title">Connexion</h1>
     <section class="bloc_connect">
-        <img src="/images/login.svg" alt="" class="imgAuth">
-        <p class="text_connect">Je me connecte :</p>
-        <form action="" method="post" class="">
-            <%- include("../components/input", {type : "email", name : "email", label : "Email"}) %>
-            <%- include("../components/input", {type : "password", name : "password", label : "Password"}) %>
-            <div class="choices">
-                <button class="button btn_back">Retour</button>
-                <button type="submit" class="button btn_validation">Connexion</button>
-            </div>
-        </form>
-        <p class="text_connect text_small">Pas encore client ? <a href="/user/signup"><span>Je cré(e) un compte !</span></a></p>
+        <div class="column">
+            <img src="/images/login.svg" alt="" class="imgAuth">
+            <p class="text_connect">Je me connecte :</p>
+            <form action="" method="post" class="">
+                <%- include("../components/input", {type : "email", name : "email", label : "Email"}) %>
+                <%- include("../components/input", {type : "password", name : "password", label : "Password"}) %>
+                <div class="choices">
+                    <button class="button btn_back">Retour</button>
+                    <button type="submit" class="button btn_validation">Connexion</button>
+                </div>
+            </form>
+            <p class="text_connect text_small">Pas encore client ? <a href="/user/signup"><span>Je cré(e) un compte !</span></a></p>
+        </div>
     </section>
 </main>
 <%- include("../partials/footer") %>
