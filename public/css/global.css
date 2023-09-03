@@ -112,7 +112,9 @@ a{
 .russo, .button{
     font-size: 0.8rem;
 }
-
+.bold{
+    font-weight: bold;
+}
 @media screen and (width >= 768px) {
     .russo, .button{
     font-size: 1rem;

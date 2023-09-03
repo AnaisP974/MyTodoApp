@@ -14,13 +14,17 @@ body{
     margin-top: 70px;
 }
 .child2 {
-    width: 100%;
+    max-width: 100%;
 }
 
 /* block */
 .content{
     margin-left: 50px;
     margin-right: 50px;
+}
+.content img{
+    margin-top: 50px;
+    width: 60%;
 }
 .bloc_homePage{
     margin: 10px;
@@ -33,7 +37,7 @@ body{
     margin-top: 100px;
     max-width: 800px;
 }
-section span{
+section .numberBlock_homePage{
     font-family: 'Kite One', sans-serif;
     font-size: 2rem;
     color: rgba(0, 0, 0, 0.3);
@@ -43,9 +47,13 @@ section p {
     font-size: 0.9rem;
     width: 70%;
 }
-section img{
+section img {
     min-width: 70px;
-    border: 2px solid gold;
+    border: none;
+    margin-bottom: 50px;
+}
+.imgLink_homePage img{
+    width: 90%;
 }
 
 @media screen and (width >= 768px) {
@@ -71,6 +79,9 @@ section img{
         top: 20%;
     }
     /* block */
+    .content img{
+        width: 40%;
+    }
     .bloc_homePage{
         margin: auto;
         margin-top: 70px;
@@ -80,6 +91,9 @@ section img{
     }
     section img{
         max-width: 400px;
+    }
+    .imgLink_homePage img{
+        width: 90%;
     }
 }
 
@@ -96,11 +110,14 @@ section img{
         margin-left: 0;
     }
     /* block */
+    section{
+        align-items: center;
+    }
     section p {
         width: 25%;
     }
     section img{
-        width: 30%;
+        width: 25%;
     }
 }
 
