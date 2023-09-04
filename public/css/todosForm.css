@@ -1,4 +1,13 @@
-
+.instruction{
+    display: flex;
+    padding: 1rem;
+    max-width: 800px;
+    margin: auto;
+}
+.instruction img{
+    width: 50%;
+    max-width: 300px;
+}
 label{
     display: none;
 }
@@ -6,9 +15,10 @@ input{
     padding: 10px;
     border: none;
     border-bottom: 1px solid #000;
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin-bottom: 20px;
     width: 90%;
+    max-width: 300px;
 }
 ul li{
     list-style-type: circle;
@@ -18,13 +28,10 @@ form{
     flex-direction: column;
     justify-content: center;
 }
-
 .content{
     margin: auto;
     width: 80%;
 }
-
-
 h3{
     font-family: 'Lexend Zetta', sans-serif;
 }
@@ -32,4 +39,22 @@ p{
     font-family: 'Indie Flower', cursive;
     max-width: 800px;
     margin: auto;
+}
+.bloc_todos{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+@media screen and (width >= 768px) {
+    input{
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (width >= 992px) {
+    input{
+        font-size: 1.3rem;
+    }
+    .bloc_todos{
+        margin: auto;
+    }
 }

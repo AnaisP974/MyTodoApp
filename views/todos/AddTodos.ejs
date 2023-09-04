@@ -1,10 +1,12 @@
 <%- include("../partials/header", {title : "Nouvelle tâche", style : "todosForm"}) %>
 <%- include("../partials/navbar") %>
 
-    
+<main>
     <h1 class="title">Nouvelle tâche</h1>
-    <p>Définir un nom à votre projet et lister les étapes pour sa réalisation.</p>
-
+    <div class="instruction">
+        <img src="/images/addTodo.svg" alt="">
+        <p>Définir un nom à votre projet et lister les étapes pour sa réalisation.</p>
+    </div>
     <section class="bloc_todos">    
         <form action="" method="post" class="flex-center">
             <div class="center content">
@@ -20,24 +22,14 @@
                     <li><%- include("../components/input", {type : "text", name : "step5", label : "Etape 5"}) %></li> 
                 </ol> 
             </div>
-            
-            <!-- <div class="content">
-                <h3>A FAIRE :</h3>
-                <ul>
-                   <li><%- include("../components/input", {type : "text", name : "todo1", label : "Etape 1"}) %></li>
-                   <li><%- include("../components/input", {type : "text", name : "todo2", label : "Etape 2"}) %></li>
-                   <li><%- include("../components/input", {type : "text", name : "todo3", label : "Etape 3"}) %></li>
-                   <li><%- include("../components/input", {type : "text", name : "todo4", label : "Etape 4"}) %></li>
-                   <li><%- include("../components/input", {type : "text", name : "todo5", label : "Etape 5"}) %></li> 
-                </ul>
-            </div> -->
-            
+                
             <div class="choices content">
                 <a href="/todos/all" class="button btn_back" type="button">Retour</a>
                 <button type="submit" class="button btn_validation">Ajouter</button>
             </div>
         </form>
-
     </section>
+</main>  
+
    
 <%- include("../partials/footer") %>

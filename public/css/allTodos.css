@@ -1,8 +1,13 @@
 .flex-end{
+    width: 90%;
     max-width: 800px;
     margin: auto;
     display: flex;
     justify-content: end;
+}
+.todoTable{
+    margin-left: 20px;
+    margin-right: 20px;
 }
 table{
     width: 100%;
@@ -22,7 +27,7 @@ thead{
 }
 th{
     font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: 30px;
     width: 30%;
 }
@@ -34,7 +39,10 @@ th:nth-child(3){
 }
 .projectName{
     font-weight: 700;
-    font-size: 1.3rem;
+    font-size: 1rem;
+}
+.created_at{
+    font-size: 0.9rem;
 }
 .todo_open{
     background-color:rgba(255, 255, 255, 0.851);
@@ -55,4 +63,25 @@ td .ajust-cell-form{
     display: flex;
     justify-content: space-around;
     align-items:center;
+    padding: 0 1rem;
+}
+@media screen and (width >= 768px) {
+    th{
+        font-size: 1.3rem;
+    }
+    .projectName{
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (width >= 992px) {
+    th{
+        font-size: 1.5rem;
+    }
+    .projectName{
+        font-size: 1.3rem;
+    }
+    .created_at{
+        font-size: 1rem;
+    }
 }
