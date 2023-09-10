@@ -1,6 +1,6 @@
 <%- include("../partials/header", {title : "Liste de tâches", style : "allTodos"}) %>
 <%- include("../partials/navbar") %>
-
+<main>
     <h1 class="title">Liste de tâches</h1>
     <div class="flex-end">
         <a href="/todos/add"><button class="button add-todo" title="Ajouter"><i class="bi bi-plus-lg"></i></i></button></a>
@@ -31,14 +31,13 @@
                                     <p class="projectName"><%= todo.projectName %></p>
                                     <p class="created_at"><%= todo.created_at.toISOString().replace(/T/, ' à ').replace(/\..+/, '') %></p>
                                     </a>
-                    <% if (todo.status !== "complete") { %>
-    
-                                    <div class="column">
-                                        <a href="/todos/update/<%= todo.id %>" title="Modifier"><i class="bi bi-pencil"></i></a>
-                                        <a href="/todos/delete/<%= todo.id %>" title="Supprimer"><i class="bi bi-trash"></i></a>                             
-                                    </div>
+                                    <% if (todo.status === "open") { %>
+                                        <div class="column">
+                                            <a href="/todos/update/<%= todo.id %>" title="Modifier"><i class="bi bi-pencil"></i></a>
+                                            <a href="/todos/delete/<%= todo.id %>" title="Supprimer"><i class="bi bi-trash"></i></a>                             
+                                        </div>
+                                    <% } %>
                                 </div>
-                    <% } %>
     
                             </td>
                             <!-- Colonne IN PROGRESS -->
@@ -80,5 +79,7 @@
             </tbody>     
         </table>
     </section>
+</main>
 
 <%- include("../partials/footer") %>
+

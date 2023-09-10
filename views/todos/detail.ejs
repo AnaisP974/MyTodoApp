@@ -1,13 +1,13 @@
 <%- include("../partials/header", {title : "Détail tâche", style: "detail"}) %>
 <%- include("../partials/navbar") %>
-  
+
+<main>
     <h1 class="title">Détail</h1>
     <% if (locals.todos.status === "open") { %>
         <h4>A faire <span>> En Cours > Terminé</span> </h4>
         <p>A ce stade, vous pouvez ajouter ou modifier les différentes étapes de votre projet en cliquant sur "Modifier". Une fois les étapes clairement définit, cliquez sur "InProgress" pour établir une todoliste pour chaque étape. </p>
     <% } else if (locals.todos.status === "inProgress") { %>
         <h4>A faire > En Cours <span>> Terminé</span> </h4>
-        <p>Cliquer sur une étape, pour accéder à la todoList.</p>
     <% } else { %>
         <h4>A faire > En Cours > Terminé </h4>       
     <% } %>
@@ -19,27 +19,27 @@
 
             <!-- STATUS OPEN -->
             <% if (todos.status ==="open") { %>
-            <div class="content">
-                <h3>ETAPES :</h3>
-                <ol>
-                    <li><%= todos.step1 %></li>
-                    <li><%= todos.step2 %></li>
-                    <li><%= todos.step3 %></li>
-                    <li><%= todos.step4 %></li>
-                    <li><%= todos.step5 %></li> 
-                </ol>  
-            </div>
-                
-            <div class="choices content">
-                <a href="/todos/inProgress/<%= todos.id %>" class="button btn_validation" type="button">InProgress</a>
-                <a href="/todos/all" class="button btn_back" type="button">Retour</a>
-    
-                <a href="/todos/delete/<%= todos.id %>" class="button btn_delete" type="button">Supprimer</a>
-                <a href="/todos/update/<%= todos.id %>" class="button btn_validation" type="button">Modifier</a>
-            </div>    
-                <% } else { %>
-                    <div class="content">
-                        <h3>ETAPES :</h3>
+                <div class="content">
+                    <h3>ETAPES :</h3>
+                    <ol>
+                        <li><%= todos.step1 %></li>
+                        <li><%= todos.step2 %></li>
+                        <li><%= todos.step3 %></li>
+                        <li><%= todos.step4 %></li>
+                        <li><%= todos.step5 %></li> 
+                    </ol>  
+                </div>
+                    
+                <div class="choices content">
+                    <a href="/todos/inProgress/<%= todos.id %>" class="button btn_validation" type="button">InProgress</a>
+                    <a href="/todos/all" class="button btn_back" type="button">Retour</a>
+        
+                    <a href="/todos/delete/<%= todos.id %>" class="button btn_delete" type="button">Supprimer</a>
+                    <a href="/todos/update/<%= todos.id %>" class="button btn_validation" type="button">Modifier</a>
+                </div>    
+            <% } else { %>
+                <div class="content">
+                    <h3>ETAPES :</h3>
                     <ol>
                         <li>
                             <% if (todos.step1) { %>
@@ -53,70 +53,69 @@
                         </li>
                         <li>
                             <% if (todos.step3) { %>
-                            <button class="button"><%= todos.step3 %></button>
+                                <button class="button"><%= todos.step3 %></button>
                             <% } %>
                         </li>
                         <li>
                             <% if (todos.step4) { %>
                                 <button class="button"><%= todos.step4 %></button>
-                                <% } %>
-                            </li>
+                            <% } %>
+                        </li>
                         <li>
                             <% if (todos.step5) { %>
-                            <button class="button"><%= todos.step5 %></button>
+                                <button class="button"><%= todos.step5 %></button>
                             <% } %>
                         </li> 
                     </ol>  
-                </div>        
-            </div>
-            <form action="" method="post" class="margin-form">
-                <fieldset>
-                    <legend>A FAIRE:</legend>
-                    <div>
-                        <input type="checkbox" id="todo1Done" name="todo1Done" <% if(todos.todo1Done){%>checked<% } %> />
-                        <label for="todo1Done"><%= todos.todo1 %></label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="todo2Done" name="todo2Done" <% if(todos.todo2Done){%>checked<% } %> />
-                        <label for="todo2Done"><%= todos.todo2 %></label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="todo3Done" name="todo3Done" <% if(todos.todo3Done){%>checked<% } %> />
-                        <label for="todo3Done"><%= todos.todo3 %></label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="todo4Done" name="todo4Done" <% if(todos.todo4Done){%>checked<% } %> />
-                        <label for="todo4Done"><%= todos.todo4 %></label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="todo5Done" name="todo5Done" <% if(todos.todo5Done){%>checked<% } %> />
-                        <label for="todo5Done"><%= todos.todo5 %></label>
-                    </div>
-                    <% if (todos.status !== "complete") { %>
-                    <div class="center">
+                </div>    
 
-                        <a href="/todos/update/<%= todos.id %>" class="button btn_update" type="button">Modifier</a>
-                        <button type="submit" class="button btn_validation">Save</button>
-                    </div>
+                <form action="" method="post" class="margin-form">
+                    <fieldset>
+                        <legend>A FAIRE:</legend>
+                        <div>
+                            <input type="checkbox" id="todo1Done" name="todo1Done" <% if(todos.todo1Done){%>checked<% } %> />
+                            <label for="todo1Done"><%= todos.todo1 %></label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="todo2Done" name="todo2Done" <% if(todos.todo2Done){%>checked<% } %> />
+                            <label for="todo2Done"><%= todos.todo2 %></label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="todo3Done" name="todo3Done" <% if(todos.todo3Done){%>checked<% } %> />
+                            <label for="todo3Done"><%= todos.todo3 %></label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="todo4Done" name="todo4Done" <% if(todos.todo4Done){%>checked<% } %> />
+                            <label for="todo4Done"><%= todos.todo4 %></label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="todo5Done" name="todo5Done" <% if(todos.todo5Done){%>checked<% } %> />
+                            <label for="todo5Done"><%= todos.todo5 %></label>
+                        </div>
+                        <% if (todos.status !== "complete") { %>
+                            <div class="center">
+
+                                <a href="/todos/update/<%= todos.id %>" class="button btn_update" type="button">Modifier</a>
+                                <button type="submit" class="button btn_validation">Save</button>
+                            </div>
+                        <% } %>
+                    </fieldset>
+                </form>
+                    
+                <div class="choices content">
+                    <a href="/todos/all" class="button btn_back" type="button">Retour</a>
+                    <% if (todos.status !== "complete") { %>
+                        <a href="/todos/complete/<%= todos.id %>" class="button btn_complete" type="button">Terminer</a>
+                        
+                        <a href="/todos/delete/<%= todos.id %>" class="button btn_delete" type="button">Supprimer</a>
                     <% } %>
-                </fieldset>
-            </form>
-                    
-            <div class="choices content">
-                <a href="/todos/all" class="button btn_back" type="button">Retour</a>
-                <% if (todos.status !== "complete") { %>
-                <a href="/todos/complete/<%= todos.id %>" class="button btn_complete" type="button">Terminer</a>
-                
-                <a href="/todos/delete/<%= todos.id %>" class="button btn_delete" type="button">Supprimer</a>
-                <% } %>
-            </div>
-                <% } %>
-                    
-            
+                </div>
+            <% } %>
                 <p>Projet de : <%= user.username %></p>
                 <p>Du : <%= todos.created_at.toISOString().replace(/T/, ' à ').replace(/\..+/, '') %></p>
                 <p>Dernière mise à jour : <%= todos.updated_at.toISOString().replace(/T/, ' à ').replace(/\..+/, '') %></p>
             </section>          
     <% } %>
+</main>
    
 <%- include("../partials/footer") %>

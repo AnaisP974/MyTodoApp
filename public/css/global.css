@@ -5,6 +5,11 @@ body{
     padding: 0;
     background-color: #DBDBDB;
 }
+main{
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+}
 h1{
     font-family: 'Lexend Zetta', sans-serif;
     font-size: 1.3rem;
