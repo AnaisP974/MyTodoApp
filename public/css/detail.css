@@ -1,6 +1,11 @@
 h3{
     font-family: 'Lexend Zetta', sans-serif;
 }
+main{
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+}
 .content{
     margin: auto;
     width: 80%;
